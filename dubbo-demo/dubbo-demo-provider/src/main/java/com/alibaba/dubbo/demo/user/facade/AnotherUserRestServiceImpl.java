@@ -12,16 +12,19 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
+
 package com.alibaba.dubbo.demo.user.facade;
 
 import com.alibaba.dubbo.demo.user.User;
 import com.alibaba.dubbo.demo.user.UserService;
 import com.alibaba.dubbo.rpc.RpcContext;
 
+*/
 /**
  * @author lishen
- */
+ *//*
+
 public class AnotherUserRestServiceImpl implements AnotherUserRestService {
 
     private UserService userService;
@@ -37,6 +40,8 @@ public class AnotherUserRestServiceImpl implements AnotherUserRestService {
     }
 
     public RegistrationResult registerUser(User user) {
+        RpcContext context = RpcContext.getContext();
         return new RegistrationResult(userService.registerUser(user));
     }
 }
+*/

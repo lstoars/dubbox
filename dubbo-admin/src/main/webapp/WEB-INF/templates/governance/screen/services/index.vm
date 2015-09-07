@@ -27,8 +27,20 @@
 	<th>$i18n.get("service"):
 	<input type="text" onkeyup="searchTable('table_o', 0, this.value);" onclick="searchTable('table_o', 0, this.value);" />&nbsp;<img src="$rootContextPath.getURI("images/ico_search.png")" width="12" height="12" />
 	</th>
-	<th width="135">$i18n.get("status"): 
-	<select onchange="searchTable('table_o', 1, this.value);" onclick="searchTable('table_o', 1, this.value);">
+	#if($application)
+
+	#else
+       <th>提供者数量
+	   </th>
+		<th>消费者数量
+		</th>
+	#end
+	<th width="135">$i18n.get("status"):
+	#if($application)
+    	<select onchange="searchTable('table_o', 1, this.value);">
+	#else
+    	<select onchange="searchTable('table_o', 4, this.value);">
+	#end
 	<option value="">$i18n.get("all")</option>
 	#if($application)
 	<option value="$i18n.get("provided")">$i18n.get("provided")</option><option value="$i18n.get("consumed")">$i18n.get("consumed")</option>
@@ -51,6 +63,22 @@
 			<a href="services/$service/providers">$service</a>
 		#end
 	</td>
+	#if($application)
+	#else
+        <td><a href="services/$service/providers">
+			#if($providerCount.get($service))
+				$!providerCount.get($service)
+			#else
+				0
+			#end</a></td>
+        <td><a href="services/$service/consumers">
+			#if($!consumerCount.get($service))
+        		$!consumerCount.get($service)
+        	#else
+				0
+			#end
+		</a></td>
+	#end
 	<td>
 		#if($application)
 			#if($providerServices.contains($service))

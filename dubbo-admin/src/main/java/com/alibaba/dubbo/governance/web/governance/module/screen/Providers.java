@@ -9,8 +9,10 @@ package com.alibaba.dubbo.governance.web.governance.module.screen;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -106,6 +108,19 @@ public class Providers extends Restful {
         else {
             providers = providerService.findAll();
         }
+		//处理多个应用注册同一个服务信息（页面显示警告）
+		Map<String, Set<String>> map = new HashMap<String, Set<String>>();
+		for (Provider p : providers) {
+			Set<String> appSet = map.get(p.getService());
+			if (appSet == null) {
+				appSet = new HashSet<String>();
+			}
+			appSet.add(p.getApplication());
+			map.put(p.getService(), appSet);
+		}
+		for (Provider p : providers) {
+			p.setApplications(StringUtils.join(map.get(p.getService()), ","));
+		}
         
         context.put("providers", providers);
         

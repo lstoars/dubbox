@@ -39,7 +39,7 @@
 <tr>
 	<td><input type="checkbox" name="ids" value="$consumer.id" /></td>
 	<td><a href="consumers/$consumer.id">#if($address)$tool.getSimpleName($consumer.service)#else$consumer.address#end</a></td>
-    <td>$consumer.application</td>
+    <td>$!consumer.application</td>
 	<td>
         #if($tool.isInBlackList($consumer))
 			<font color="red">$i18n.get("Forbidden")</font>

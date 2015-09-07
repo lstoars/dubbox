@@ -84,7 +84,7 @@
 	</profiles>
 	<properties>
 		<!-- Common libs -->
-		<spring.bom.version>3.2.9.RELEASE</spring.bom.version>
+		<spring.bom.version>4.2.0.RELEASE</spring.bom.version>
 		<javassist_version>3.15.0-GA</javassist_version>
 		<netty_version>3.7.0.Final</netty_version>
 		<mina_version>1.1.7</mina_version>
@@ -126,7 +126,7 @@
 		<easymock_version>3.0</easymock_version>
 		<jmockit_version>0.999.8</jmockit_version>
 		<!-- Build args -->
-		<!--<argline>-server -Xms64m -Xmx64m -XX:PermSize=64m -XX:MaxPermSize=64m</argline> -->
+		<!--<argline>-server -Xms64m -Xmx64m -XX:PermSize=64m -XX:MaxPermSize=64m</argline>-->
 		<skip_maven_deploy>false</skip_maven_deploy>
 		<updateReleaseInfo>true</updateReleaseInfo>
 		<project.build.sourceEncoding>${file_encoding}</project.build.sourceEncoding>
@@ -497,8 +497,8 @@
 					<useSystemClassLoader>true</useSystemClassLoader>
 					<forkMode>once</forkMode>
 					<argLine>${argline}</argLine>
-					<systemProperties>
-						<!-- common shared -->
+					<!--<systemProperties>
+						&lt;!&ndash; common shared &ndash;&gt;
 						<property>
 							<name>transporter</name>
 							<value>${transporter}</value>
@@ -507,7 +507,7 @@
 							<name>serialization</name>
 							<value>${serialization}</value>
 						</property>
-						<!-- server side -->
+						&lt;!&ndash; server side &ndash;&gt;
 						<property>
 							<name>port</name>
 							<value>${port}</value>
@@ -524,7 +524,7 @@
 							<name>iothreads</name>
 							<value>${iothreads}</value>
 						</property>
-						<!-- client side -->
+						&lt;!&ndash; client side &ndash;&gt;
 						<property>
 							<name>server</name>
 							<value>${server}</value>
@@ -557,7 +557,7 @@
 							<name>onerror</name>
 							<value>${onerror}</value>
 						</property>
-					</systemProperties>
+					</systemProperties>-->
 				</configuration>
 			</plugin>
 			<plugin>
@@ -600,7 +600,7 @@
 						<source>${java_source_version}</source>
 						<target>${java_target_version}</target>
 						<encoding>${file_encoding}</encoding>
-                        <compilerArgs>
+                       <compilerArgs>
                             <arg>-XX:MaxPermSize=512M</arg>
                         </compilerArgs>
 					</configuration>

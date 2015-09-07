@@ -1,12 +1,12 @@
 /**
  * Copyright 1999-2014 dangdang.com.
- *
+ * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p/>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p/>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,8 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.QueryParam;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,12 +35,16 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {
 
+    @QueryParam("id")
+    @FormParam("id")
     @NotNull
     @Min(1L)
     private Long id;
 
     @JsonProperty("username")
     @XmlElement(name = "username")
+    @QueryParam("name")
+    @FormParam("name")
     @NotNull
     @Size(min = 6, max = 50)
     private String name;

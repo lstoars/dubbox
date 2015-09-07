@@ -16,6 +16,7 @@
 package com.alibaba.dubbo.demo.consumer;
 
 import com.alibaba.dubbo.demo.user.User;
+import org.apache.http.util.EntityUtils;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -23,6 +24,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.bind.SchemaOutputResolver;
 
 /**
  * @author lishen
@@ -41,7 +43,7 @@ public class RestClient {
 //                    for (int j = 0; j < 500; j++) {
                         registerUser("http://localhost:" + port + "/services/users/register.json", MediaType.APPLICATION_JSON_TYPE);
 
-                        registerUser("http://localhost:" + port + "/services/users/register.xml", MediaType.TEXT_XML_TYPE);
+                       registerUser("http://localhost:" + port + "/services/users/register.xml", MediaType.TEXT_XML_TYPE);
 
                         getUser("http://localhost:" + port + "/services/users/1.json");
 
