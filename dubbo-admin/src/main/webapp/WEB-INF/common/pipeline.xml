@@ -47,6 +47,11 @@
 					<performTemplateScreen />
 				</when>
 				<when>
+					<!-- json -->
+					<pl-conditions:target-extension-condition extension="json"/>
+					<performScreen />
+				</when>
+				<when>
 					<!-- 执行带模板的screen，默认有layout。 -->
 					<pl-conditions:target-extension-condition
 						extension="null, vm, jsp, html" />

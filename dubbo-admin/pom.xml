@@ -26,6 +26,8 @@
 	<name>${project.artifactId}</name>
 	<description>The admin module of dubbo project</description>
 	<properties>
+		<!-- webx 的spring版本不能太高-->
+		<spring.bom.version>3.2.9.RELEASE</spring.bom.version>
 		<wtpversion>1.5</wtpversion>
 		<wtpContextName>/</wtpContextName>
 		<eclipse.useProjectReferences>false</eclipse.useProjectReferences>

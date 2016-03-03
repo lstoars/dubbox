@@ -496,7 +496,7 @@
 				<configuration>
 					<useSystemClassLoader>true</useSystemClassLoader>
 					<forkMode>once</forkMode>
-					<argLine>${argline}</argLine>
+					<!--<argLine>${argline}</argLine>-->
 					<!--<systemProperties>
 						&lt;!&ndash; common shared &ndash;&gt;
 						<property>
@@ -600,9 +600,9 @@
 						<source>${java_source_version}</source>
 						<target>${java_target_version}</target>
 						<encoding>${file_encoding}</encoding>
-                       <compilerArgs>
+                      <!-- <compilerArgs>
                             <arg>-XX:MaxPermSize=512M</arg>
-                        </compilerArgs>
+                        </compilerArgs>-->
 					</configuration>
 				</plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings
