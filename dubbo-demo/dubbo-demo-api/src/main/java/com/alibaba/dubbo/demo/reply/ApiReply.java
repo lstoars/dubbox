@@ -3,10 +3,12 @@ package com.alibaba.dubbo.demo.reply;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
+import java.io.Serializable;
+
 /**
  * Created by lenovo on 2015/9/7.
  */
-public class ApiReply {
+public class ApiReply implements Serializable{
 	private String code;
 
 	private String msg;

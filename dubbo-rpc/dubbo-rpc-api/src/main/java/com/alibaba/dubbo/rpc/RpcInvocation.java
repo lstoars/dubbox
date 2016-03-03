@@ -72,6 +72,9 @@ public class RpcInvocation implements Invocation, Serializable {
             if (url.hasParameter(Constants.APPLICATION_KEY)) {
                 setAttachment(Constants.APPLICATION_KEY, url.getParameter(Constants.APPLICATION_KEY));
             }
+			if (url.hasParameter(Constants.APPLICATION_KEY)) {
+				setAttachment("consumerApplication", url.getParameter(Constants.APPLICATION_KEY));
+			}
         }
     }
 

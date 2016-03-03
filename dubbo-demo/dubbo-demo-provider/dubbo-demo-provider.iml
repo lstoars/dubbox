@@ -53,7 +53,7 @@
     <orderEntry type="module" module-name="dubbo-remoting-p2p" />
     <orderEntry type="module" module-name="dubbo-remoting-http" />
     <orderEntry type="module" module-name="dubbo-common" />
-    <orderEntry type="module" module-name="hessian-lite" />
+    <orderEntry type="library" name="Maven: com.alibaba:hessian-lite:3.2.1-fixed-2" level="project" />
     <orderEntry type="module" module-name="dubbo-rpc-default" />
     <orderEntry type="module" module-name="dubbo-rpc-api" />
     <orderEntry type="module" module-name="dubbo-container-api" />
