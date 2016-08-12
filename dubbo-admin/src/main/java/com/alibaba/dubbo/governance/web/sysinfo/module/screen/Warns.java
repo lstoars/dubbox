@@ -49,9 +49,9 @@ public class Warns extends Restful {
 		}
 		if (StringUtils.isNotEmpty(noProviderService.toString())) {
 			response.getWriter()
-					.println("0;" + noProviderService.deleteCharAt(noProviderService.length() - 1).toString());
+					.println(noProviderService.deleteCharAt(noProviderService.length() - 1).toString());
 		} else {
-			response.getWriter().println("1;");
+			response.getWriter().println("1");
 		}
 
 	}
