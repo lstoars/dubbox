@@ -53,7 +53,7 @@
     <orderEntry type="module" module-name="dubbo-remoting-p2p" />
     <orderEntry type="module" module-name="dubbo-remoting-http" />
     <orderEntry type="module" module-name="dubbo-common" />
-    <orderEntry type="library" name="Maven: com.alibaba:hessian-lite:3.2.1-fixed-2" level="project" />
+    <orderEntry type="module" module-name="hessian-lite" />
     <orderEntry type="module" module-name="dubbo-rpc-default" />
     <orderEntry type="module" module-name="dubbo-rpc-api" />
     <orderEntry type="module" module-name="dubbo-container-api" />
@@ -66,6 +66,7 @@
     <orderEntry type="module" module-name="dubbo-rpc-thrift" />
     <orderEntry type="module" module-name="dubbo-rpc-memcached" />
     <orderEntry type="module" module-name="dubbo-rpc-redis" />
+    <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.6" level="project" />
     <orderEntry type="module" module-name="dubbo-rpc-rest" />
     <orderEntry type="module" module-name="dubbo-registry-default" />
     <orderEntry type="module" module-name="dubbo-registry-multicast" />
@@ -122,8 +123,8 @@
     <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.2" level="project" />
-    <orderEntry type="library" name="Maven: redis.clients:jedis:2.1.0" level="project" />
-    <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.6" level="project" />
+    <orderEntry type="library" name="Maven: redis.clients:jedis:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.3" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-validator:4.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.cache:cache-api:0.4" level="project" />
