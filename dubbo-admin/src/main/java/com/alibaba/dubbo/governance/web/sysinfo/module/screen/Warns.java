@@ -107,6 +107,35 @@ public class Warns extends Restful {
 
 	}
 	
+
+	/**  
+	 * @功能描述: 根据接口名查询提供者的URL
+	 * @创建作者: 欧阳文斌
+	 * @创建日期: 2016年12月5日 上午10:28:42
+	 * @param ip
+	 * @throws IOException
+	 */ 
+	public void queryByService(Map<String, Object> context) throws IOException {
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		if(context==null){result.put("status", -1);result.put("msg", "参数错误");}
+		String interFace = (String) context.get("interface");
+		if(StringUtils.isEmpty(interFace)){result.put("status", -1);result.put("msg", "参数错误");}
+		List<Provider> providers= providerService.findByService(interFace);
+
+		List<CheckServiceModel> providerResult = new ArrayList<Warns.CheckServiceModel>();
+		if(providers!=null){
+			for (Provider provider : providers) {
+				CheckServiceModel model = new CheckServiceModel();
+				model.setUrl(provider.getUrl());
+				providerResult.add(model);
+			}
+		}
+		result.put("providerDatas", providerResult);
+		result.put("status", 1);result.put("msg", "调用成功");
+		response.getWriter().println(JSONArray.toJSONString(result));
+
+	}
+	
 	class CheckServiceModel implements Serializable{
 		private static final long serialVersionUID = 1L;
 		/** dubbo url */
