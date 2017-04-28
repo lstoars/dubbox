@@ -1,13 +1,10 @@
 package com.alibaba.dubbo.governance.web.sysinfo.module.screen;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -52,7 +49,7 @@ public class Warns extends Restful {
 		}
 		StringBuilder noProviderService = new StringBuilder();
 		for (String service : services) {
-			if (!providerServices.contains(service)) {
+			if (!providerServices.contains(service) && !getIgnoreService().contains(service)) {
 				noProviderService.append(service).append(",");
 			}
 		}
@@ -62,7 +59,18 @@ public class Warns extends Restful {
 		} else {
 			response.getWriter().println("1");
 		}
+	}
 
+	private List<String> getIgnoreService() {
+		List<String> result = new ArrayList<String>();
+		try {
+			Scanner scanner = new Scanner(new File("/home/admin/noprovider_ignore.txt"));
+			while (scanner.hasNextLine()) {
+				result.add(scanner.nextLine());
+			}
+		} catch (FileNotFoundException e) {
+		}
+		return result;
 	}
 
 	/**  
